@@ -13,4 +13,3 @@ class CaesarTest(unittest.TestCase):
 
     def test_a_should_be_transformed_to_c_when_key_2(self):
         self.assertEquals("c", Caesar.encrypt("a", 2))
-
