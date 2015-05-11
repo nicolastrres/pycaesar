@@ -10,8 +10,15 @@ class Caesar():
         return encrypted_message
 
     @classmethod
-    def encrypt_letter(self, letter, key):
+    def encrypt_letter(cls, letter, key):
         number_letter = ord(letter) + key
-        number_after_last_letter = number_letter - 122
-        encrypted_letter = number_letter if number_after_last_letter <= 0 else 96 + number_after_last_letter
+        if letter == letter.lower():
+            encrypted_letter = cls.encrypt_lower_case(number_letter)
+        else:
+            encrypted_letter = number_letter
         return chr(encrypted_letter)
+
+    @classmethod
+    def encrypt_lower_case(cls, number_letter):
+        number_after_last_letter = number_letter - 122
+        return number_letter if number_after_last_letter <= 0 else 96 + number_after_last_letter
