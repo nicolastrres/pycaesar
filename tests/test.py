@@ -31,3 +31,6 @@ class CaesarTest(unittest.TestCase):
 
     def test_A_should_be_transformed_to_B_when_key_1(self):
         self.assertEquals("B", Caesar.encrypt("A", 1))
+
+    def test_Z_should_be_transformed_to_A_when_key_1(self):
+        self.assertEquals("A", Caesar.encrypt("Z", 1))
