@@ -19,3 +19,12 @@ class CaesarTest(unittest.TestCase):
 
     def test_qwerty_should_be_transformed_to_rxfsuz_when_the_key_1(self):
         self.assertEquals("rxfsuz", Caesar.encrypt("qwerty", 1))
+
+    def test_z_should_be_transformed_to_a_when_key_1(self):
+        self.assertEquals("a", Caesar.encrypt("z", 1))
+
+    def test_y_should_be_transformed_to_a_when_key_2(self):
+        self.assertEquals("a", Caesar.encrypt("y", 2))
+
+    def test_xyz_should_be_transformed_to_efg_when_key_7(self):
+        self.assertEquals("efg", Caesar.encrypt("xyz", 7))
