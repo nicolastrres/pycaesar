@@ -1,6 +1,6 @@
 import unittest
 
-from caesar.caesar import encrypt
+from caesar.caesar import encrypt, decrypt
 
 
 class EncryptTest(unittest.TestCase):
@@ -37,3 +37,9 @@ class EncryptTest(unittest.TestCase):
 
     def test_XYZ_should_be_transformed_to_EFG_when_key_7(self):
         self.assertEquals("EFG", encrypt("XYZ", 7))
+
+class DecryptTest(unittest.TestCase):
+
+    def test_b_should_be_transformed_to_b_when_key_0(self):
+        self.assertEquals("b", decrypt("b", 0))
+

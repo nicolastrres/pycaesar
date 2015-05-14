@@ -24,3 +24,7 @@ def encrypt_lower_case(number_letter):
 def encrypt_upper_case(number_letter):
     number_after_last_letter = number_letter - 90
     return number_letter if number_after_last_letter <= 0 else 64 + number_after_last_letter
+
+
+def decrypt(ciphertext, key):
+    return ciphertext
