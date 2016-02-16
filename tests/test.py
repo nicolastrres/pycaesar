@@ -31,3 +31,8 @@ class DecryptTest(unittest.TestCase):
     def test_b_should_be_transformed_to_b_when_key_0(self):
         self.assertEquals("b", decrypt("b", 0))
 
+    def test_b_should_be_transformed_to_a_when_key_1(self):
+        self.assertEquals("a", decrypt("b", 1))
+
+    def test_bc_should_be_transformed_to_ab_when_key_1(self):
+        self.assertEquals("ab", decrypt("bc", 1))

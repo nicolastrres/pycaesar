@@ -28,5 +28,10 @@ def _encrypt_upper_case(encrypted_letter_number):
     return encrypted_letter_number if number_of_letters_after_last_letter <= 0 else A_DECIMAL_ASCII_REPRESENTATION + number_of_letters_after_last_letter
 
 
-def decrypt(ciphertext, key):
-    return ciphertext
+def decrypt(cipher_text, key):
+    return ''.join([decrypt_letter(cipher_letter, key) for cipher_letter in cipher_text])
+
+
+def decrypt_letter(cipher_letter, key):
+    plain_letter_number = ord(cipher_letter) - key
+    return chr(plain_letter_number)
