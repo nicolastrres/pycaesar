@@ -26,6 +26,7 @@ class EncryptTest(unittest.TestCase):
     def test_Z_should_be_transformed_to_A_when_key_1(self):
         self.assertEquals("A", encrypt("Z", 1))
 
+
 class DecryptTest(unittest.TestCase):
 
     def test_b_should_be_transformed_to_b_when_key_0(self):

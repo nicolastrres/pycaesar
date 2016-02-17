@@ -21,17 +21,33 @@ def encrypt_letter(plain_letter, key):
 def _encrypt_lower_case(encrypted_letter_number):
     number_of_letters_after_last_letter = encrypted_letter_number - (z_DECIMAL_ASCII_REPRESENTATION + 1)
     # TODO: this is too messy, find a way to get rid of +1
-    return encrypted_letter_number if number_of_letters_after_last_letter < 0 else a_DECIMAL_ASCII_REPRESENTATION + number_of_letters_after_last_letter
+    if number_of_letters_after_last_letter < 0:
+        return encrypted_letter_number
+    else:
+        return a_DECIMAL_ASCII_REPRESENTATION + number_of_letters_after_last_letter
 
 
 def _encrypt_upper_case(encrypted_letter_number):
     number_of_letters_after_last_letter = encrypted_letter_number - (Z_DECIMAL_ASCII_REPRESENTATION + 1)
     # TODO: this is too messy, find a way to get rid of +1
-    return encrypted_letter_number if number_of_letters_after_last_letter < 0 else A_DECIMAL_ASCII_REPRESENTATION + number_of_letters_after_last_letter
+    if number_of_letters_after_last_letter < 0:
+        return encrypted_letter_number
+    else:
+        return A_DECIMAL_ASCII_REPRESENTATION + number_of_letters_after_last_letter
 
 
 def decrypt(cipher_text, key):
     return ''.join([decrypt_letter(cipher_letter, key) for cipher_letter in cipher_text])
+
+
+def decrypt_letter(cipher_letter, key):
+    plain_letter_number = ord(cipher_letter) - key
+
+    if cipher_letter == cipher_letter.lower():
+        plain_letter_number = _decrypt_lower_case(plain_letter_number)
+    else:
+        plain_letter_number = _decrypt_upper_case(plain_letter_number)
+    return chr(plain_letter_number)
 
 
 def _decrypt_lower_case(plain_letter_number):
@@ -50,13 +66,3 @@ def _decrypt_upper_case(plain_letter_number):
         return Z_DECIMAL_ASCII_REPRESENTATION + number_of_letters_before_first_letter
     else:
         return plain_letter_number
-
-def decrypt_letter(cipher_letter, key):
-    # TODO: add tests for this function
-    plain_letter_number = ord(cipher_letter) - key
-    
-    if cipher_letter == cipher_letter.lower():
-        plain_letter_number = _decrypt_lower_case(plain_letter_number)
-    else:
-        plain_letter_number = _decrypt_upper_case(plain_letter_number)
-    return chr(plain_letter_number)
