@@ -5,10 +5,10 @@ z_DECIMAL_ASCII_REPRESENTATION = 122
 
 
 def encrypt(message, key):
-    return ''.join([encrypt_letter(letter, key) for letter in message])
+    return ''.join([_encrypt_letter(letter, key) for letter in message])
 
 
-def encrypt_letter(plain_letter, key):
+def _encrypt_letter(plain_letter, key):
     encrypted_letter_number = ord(plain_letter) + key
 
     if plain_letter == plain_letter.lower():
@@ -37,10 +37,10 @@ def _encrypt_upper_case(encrypted_letter_number):
 
 
 def decrypt(cipher_text, key):
-    return ''.join([decrypt_letter(cipher_letter, key) for cipher_letter in cipher_text])
+    return ''.join([_decrypt_letter(cipher_letter, key) for cipher_letter in cipher_text])
 
 
-def decrypt_letter(cipher_letter, key):
+def _decrypt_letter(cipher_letter, key):
     plain_letter_number = ord(cipher_letter) - key
 
     if cipher_letter == cipher_letter.lower():
