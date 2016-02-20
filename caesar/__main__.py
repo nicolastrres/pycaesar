@@ -9,7 +9,7 @@ def usage():
     print('Usage: pycaesar -k key -m message')
     print('-k --key                - key is a numeric value to encrypt the message. Mandatory.')
     print('-m --message            - message that is going to be encrypted. Mandatory')
-    print('\n\nExamples:\n pycaesar -k 1 -m my super message that is going to be encrypted')
+    print('\n\nExamples:\n pycaesar encrypt 3 \'my super message that is going to be encrypted\'')
     sys.exit(0)
 
 
