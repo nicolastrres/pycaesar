@@ -5,7 +5,11 @@ z_DECIMAL_ASCII_REPRESENTATION = 122
 
 
 def encrypt(message, key):
-    return ''.join([_encrypt_letter(letter, key) for letter in message])
+    try:
+        key = int(key)
+        return ''.join([_encrypt_letter(letter, key) for letter in message])
+    except ValueError:
+        return 'Please use an valid integer as key.'
 
 
 def _encrypt_letter(plain_letter, key):
