@@ -14,12 +14,14 @@ def encrypt(message, key):
 
 def _encrypt_letter(plain_letter, key):
     encrypted_letter_number = ord(plain_letter) + key
-
-    if plain_letter == plain_letter.lower():
-        encrypted_letter_number = _encrypt_lower_case(encrypted_letter_number)
+    if plain_letter.isalpha():
+        if plain_letter == plain_letter.lower():
+            encrypted_letter_number = _encrypt_lower_case(encrypted_letter_number)
+        else:
+            encrypted_letter_number = _encrypt_upper_case(encrypted_letter_number)
+        return chr(encrypted_letter_number)
     else:
-        encrypted_letter_number = _encrypt_upper_case(encrypted_letter_number)
-    return chr(encrypted_letter_number)
+        return plain_letter
 
 
 def _encrypt_lower_case(encrypted_letter_number):
@@ -46,12 +48,14 @@ def decrypt(cipher_text, key):
 
 def _decrypt_letter(cipher_letter, key):
     plain_letter_number = ord(cipher_letter) - key
-
-    if cipher_letter == cipher_letter.lower():
-        plain_letter_number = _decrypt_lower_case(plain_letter_number)
+    if cipher_letter.isalpha():
+        if cipher_letter == cipher_letter.lower():
+            plain_letter_number = _decrypt_lower_case(plain_letter_number)
+        else:
+            plain_letter_number = _decrypt_upper_case(plain_letter_number)
+        return chr(plain_letter_number)
     else:
-        plain_letter_number = _decrypt_upper_case(plain_letter_number)
-    return chr(plain_letter_number)
+        return cipher_letter
 
 
 def _decrypt_lower_case(plain_letter_number):

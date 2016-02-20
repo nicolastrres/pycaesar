@@ -29,6 +29,10 @@ def test_Z_should_be_encrypted_to_A_when_key_1():
     assert encrypt('Z', 1) == 'A'
 
 
+def test_should_only_encrypt_alphabetic_chars():
+    assert encrypt('Z a 1123 nico', 1) == 'A b 1123 ojdp'
+
+
 def test_b_should_be_decrypted_to_b_when_key_0():
     assert decrypt('b', 0) == 'b'
 
@@ -63,3 +67,7 @@ def test_B_should_be_decrypted_to_A_when_key_1():
 
 def test_A_should_be_decrypted_to_Z_when_key_1():
     assert decrypt('A', 1) == 'Z'
+
+
+def test_should_only_decrypt_alphabetic_chars():
+    assert decrypt('A b 1123 ojdp', 1) == 'Z a 1123 nico'
