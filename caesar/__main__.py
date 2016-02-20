@@ -44,7 +44,8 @@ def main():
         cipher_text = caesar.encrypt(message=args.message, key=args.key)
         print('Cipher text: {}'.format(cipher_text))
     else:
-        print('Decryption to be implemented')
+        cipher_text = caesar.decrypt(cipher_text=args.message, key=args.key)
+        print('Plain text: {}'.format(cipher_text))
 
 
 if __name__ == "__main__":
