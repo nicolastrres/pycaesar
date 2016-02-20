@@ -14,27 +14,38 @@ def usage():
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(prog='Pycaesar')
+    parser = argparse.ArgumentParser(
+        prog='Pycaesar',
+        description='A simple caesar cipher in python',
+        epilog='And that is the way you encrypt/decrypt data using the caesar cipher algorithm'
+    )
     group_request = parser.add_argument_group('Encryption options')
-    group_request.add_argument('-k', '--key', nargs="*", type=str, default=[], action="store", dest="key",
-                               help="Key is a numeric value to encrypt the message")
-    group_request.add_argument('-m', '--message', action='store', dest='message_to_encrypt',
-                               help='Message to be encrypted')
+    group_request.add_argument(
+        'function',
+        choices=['encrypt', 'decrypt'],
+        help="Encrypt or decrypt?")
+    group_request.add_argument(
+        'key',
+        type=int,
+        help="Key is a numeric value to encrypt the message")
+    group_request.add_argument(
+        'message',
+        type=str,
+        help='Message to be encrypted')
     args = parser.parse_args()
     return args
 
 
 def main():
-
     if not len(sys.argv[1:]):
         usage()
     args = parse_args()
-
-    if args.key and args.message_to_encrypt and len(args.key) == 1:
-        cipher_text = caesar.encrypt(message=args.message_to_encrypt, key=args.key[0])
+    if args.function == 'encrypt':
+        cipher_text = caesar.encrypt(message=args.message, key=args.key)
         print('Cipher text: {}'.format(cipher_text))
     else:
-        print('ERROR! You have to send one key and message :)')
+        print('Decryption to be implemented')
+
 
 if __name__ == "__main__":
     main()
