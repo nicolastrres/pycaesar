@@ -38,6 +38,7 @@ python3.4 caesar/__main__.py decrypt 2 'ciwuvkp pkeqncu'
 2. Create a new virtual environment `pyvenv ~/.virtualenvs/pycaesar && source ~/.virtualenvs/pycaesar/bin/activate`
 3. Install the requirements `pip install -r requirements.txt`
 4. Write your tests on tests/
-5. Run the tests `py.test tests/test.py`
-6. Run `flake8 caesar tests`
-7. Push your changes and make a pull request.
+5. Run `py.test --cov=caesar tests/test.py` to see the test coverage
+6. Run the tests `py.test tests/test.py`
+7. Run `flake8 caesar tests`
+8. Push your changes and make a pull request.
