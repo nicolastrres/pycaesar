@@ -3,7 +3,7 @@ import string
 
 from _pytest.python import raises
 
-from caesar.caesar import encrypt, decrypt
+from pycaesar.pycaesar import encrypt, decrypt
 
 
 def random_plain_text_generator(size=100, chars=string.printable):

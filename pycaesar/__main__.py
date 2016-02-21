@@ -1,7 +1,7 @@
 import argparse
-import sys
 
-import caesar
+import sys
+import pycaesar
 
 
 def usage():
@@ -41,10 +41,10 @@ def main():
         usage()
     args = parse_args()
     if args.function == 'encrypt':
-        cipher_text = caesar.encrypt(message=args.message, key=args.key)
+        cipher_text = pycaesar.encrypt(message=args.message, key=args.key)
         print('Cipher text: {}'.format(cipher_text))
     else:
-        cipher_text = caesar.decrypt(cipher_text=args.message, key=args.key)
+        cipher_text = pycaesar.decrypt(cipher_text=args.message, key=args.key)
         print('Plain text: {}'.format(cipher_text))
 
 
