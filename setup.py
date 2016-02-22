@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pycaesar',
-      version='0.2',
+      version='0.2.1',
       description='Simple caesar cipher',
       long_description='Simple caesar cipher in python. IMPORTANT: IMPORTANT: This is not secure and should not be'
                        ' used for a purpose other than have fun. '
@@ -19,7 +19,7 @@ setup(name='pycaesar',
       packages=['pycaesar'],
       entry_points={
           'console_scripts': [
-              'requestOn=pycaesar.__main__:main',
+              'pycaesar=pycaesar.__main__:main',
           ],
       },
       zip_safe=False)
