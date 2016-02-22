@@ -7,6 +7,10 @@ Simple caesar cipher in python.
 IMPORTANT: This is not secure and should not be used for a purpose other than have fun.
 
 
+#### How to install
+
+Just run `pip install pycaesar` and have fun :)
+
 #### How to use pycaesar
 
 You can encrypt/decrypt from the command line:
@@ -27,8 +31,8 @@ And that is the way you encrypt/decrypt data using the caesar cipher algorithm
 ```
 Examples:
 ```
-python3.4 caesar/__main__.py encrypt 2 'agustin nicolas'
-python3.4 caesar/__main__.py decrypt 2 'ciwuvkp pkeqncu'
+pycaesar encrypt 2 'agustin nicolas'
+pycaesar decrypt 2 'ciwuvkp pkeqncu'
 ```
 
 
