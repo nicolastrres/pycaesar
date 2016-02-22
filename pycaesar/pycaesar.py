@@ -7,7 +7,7 @@ z_DECIMAL_ASCII_REPRESENTATION = 122
 def encrypt(message, key):
     try:
         key = int(key)
-        if key > 0 and key < 26:
+        if 0 < key < 26:
             return ''.join([_encrypt_letter(letter, key) for letter in message])
         else:
             raise ValueError
@@ -48,7 +48,7 @@ def _encrypt_upper_case(encrypted_letter_number):
 def decrypt(cipher_text, key):
     try:
         key = int(key)
-        if key > 0 and key < 26:
+        if 0 < key < 26:
             return ''.join([_decrypt_letter(cipher_letter, key) for cipher_letter in cipher_text])
         else:
             raise ValueError
