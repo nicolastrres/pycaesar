@@ -1,4 +1,4 @@
-# Pycaesar [![Build Status](https://snap-ci.com/nicolastrres/pycaesar/branch/master/build_image)](https://snap-ci.com/nicolastrres/pycaesar/branch/master)[![PyPi version](https://img.shields.io/pypi/v/pycaesar.svg)](https://pypi.python.org/pypi/pycaesar)
+# Pycaesar [![PyPi version](https://img.shields.io/pypi/v/pycaesar.svg)](https://pypi.python.org/pypi/pycaesar)
 ### Caesar cipher in python 
 
 Simple caesar cipher in python.
