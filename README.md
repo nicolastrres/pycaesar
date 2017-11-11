@@ -48,7 +48,7 @@ pycaesar decrypt 2 'ciwuvkp pkeqncu'
 8. Push your changes and make a pull request.
 
 
-##License 
+## License 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 The MIT License (MIT)
